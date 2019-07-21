@@ -164,4 +164,18 @@ public class AccountDB {
         }
         return 0;
     }
+    
+    public int deleteAcc (String username){
+        try {
+            String sql = "DELETE FROM dbo.Account WHERE Username =?";
+            PreparedStatement st = con.prepareStatement(sql);
+            st.setString(1, username);
+            
+            int x = st.executeUpdate();
+            return x;
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+    }
 }

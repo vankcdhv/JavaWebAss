@@ -54,7 +54,7 @@
                         }%>
                 </td>
                 <td><a href="AccountUpdate.jsp?username=<%=i.getUsername()%>">Sửa</a></td>
-                <td><a href="#">Xoá</a></td>
+                <td><a href="AccountDelleteServlet?username=<%=i.getUsername()%>">Xoá</a></td>
             </tr>
             <%}%>
         </table>
