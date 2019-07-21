@@ -12,6 +12,6 @@
         <title>Management Product</title>
     </head>
     <body>
-        <H1>Product</H1>
+        <H1>List Product</H1>
     </body>
 </html>
