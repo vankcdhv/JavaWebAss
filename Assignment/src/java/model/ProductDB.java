@@ -86,9 +86,10 @@ public class ProductDB {
     public Product getProductByID(String id) {
         Product res = null;
         try {
-            String sql = "SELECT * FROM dbo.Products WHERE ID = ?";
+            String sql = "SELECT * FROM dbo.Products WHERE ID = '" + id + "'";
             PreparedStatement st = con.prepareStatement(sql);
-            st.setString(1, id);
+            //System.out.println(sql);
+            //st.setString(1, id);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 res = new Product(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
