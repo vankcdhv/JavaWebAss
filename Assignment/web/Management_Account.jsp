@@ -53,10 +53,11 @@
                     <%}
                         }%>
                 </td>
-                <td><a href="AccountProfile.jsp?us_edit=<%=i.getUsername()%>">Sửa</a></td>
+                <td><a href="AccountUpdate.jsp?username=<%=i.getUsername()%>">Sửa</a></td>
                 <td><a href="#">Xoá</a></td>
             </tr>
             <%}%>
         </table>
     </body>
 </html>
+

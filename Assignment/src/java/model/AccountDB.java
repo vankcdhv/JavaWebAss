@@ -47,6 +47,24 @@ public class AccountDB {
         return list;
     }
 
+    public Account getAccountByUsername(String username) {
+        try {
+            String sql = "SELECT * FROM dbo.Account WHERE Username=? ";
+            PreparedStatement st = con.prepareStatement(sql);
+            st.setString(1, username);
+            
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                return new Account(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+
+    }
+    
+    
     public Account getAccount(String username, String password) {
         try {
             String sql = "SELECT * FROM dbo.Account WHERE Username=? AND Password =?";
