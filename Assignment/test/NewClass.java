@@ -61,5 +61,6 @@ public class NewClass {
             }
         }
         System.out.println(s);
+        System.out.println(s);
     }
 }
