@@ -8,7 +8,6 @@ package controller;
 import entity.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.jms.Session;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +20,7 @@ import model.AccountDB;
  *
  * @author vank4
  */
-public class RegisterServlet extends HttpServlet {
+public class AccountEditServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,26 +34,30 @@ public class RegisterServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("Unicode");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-            String display = request.getParameter("fullname");
-            String email = request.getParameter("email");
-            int type = 2;
-            AccountDB adb = new AccountDB();
-            int x = adb.addAccount(username, password, display, email, type);
-            if (x == 0) {
-                request.setAttribute("error", "Register not succesfuly!");
-                RequestDispatcher dis = request.getRequestDispatcher("Index.jsp");
-                dis.forward(request, response);
-            } else {
-                HttpSession session = request.getSession(true);
-                Account a = new Account(username, password, display, email, type);
-                session.setAttribute("account", a);
-                response.sendRedirect("Index.jsp");
-            }
+        request.setCharacterEncoding("utf-8");
+        HttpSession session = request.getSession(true);
+        String user = request.getParameter("username");
+        String name = request.getParameter("fullname");
+        String pass = request.getParameter("password");
+        String email = request.getParameter("email");
+        int type = 0;
+        if (request.getParameter("type").equals("Admin")){
+            type = 0;
+        }
+        if (request.getParameter("type").equals("Staff")){
+            type = 1;
+        }
+        if (request.getParameter("type").equals("Customer")){
+            type = 2;
+        }
+        AccountDB adb = new AccountDB();
+        int x = adb.edit(user, pass, name, email, type);
+        if (x == 0) {
+            request.setAttribute("mess", "Update not succesfully");
+            RequestDispatcher dis = request.getRequestDispatcher("AccountProfile.jsp");
+            dis.forward(request, response);
+        } else {
+            response.sendRedirect("Management.jsp?page=account");
         }
     }
 

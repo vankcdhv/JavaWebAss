@@ -24,6 +24,10 @@
         <servlet-name>AccountUpdateServlet</servlet-name>
         <servlet-class>controller.AccountUpdateServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AccountEditServlet</servlet-name>
+        <servlet-class>controller.AccountEditServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/RegisterServlet</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>AccountUpdateServlet</servlet-name>
         <url-pattern>/AccountUpdateServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccountEditServlet</servlet-name>
+        <url-pattern>/AccountEditServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

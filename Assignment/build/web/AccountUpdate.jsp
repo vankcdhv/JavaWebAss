@@ -26,7 +26,7 @@
         %>
         <section style="width: 990px; margin: 0 auto;background-color: #FFFFFF;border: 0px solid #8C0209;padding: 20px 5px 0px 5px;">
             <H2 style="text-align: center">Thông tin tài khoản</H2>
-            <form name="frmregister" action="AccountUpdateServlet" method="post" onsubmit="return matchPass()">
+            <form name="frmregister" action="AccountEditServlet" method="post" onsubmit="return matchPass()">
                 <table style=" width: 40%;margin-left: auto; margin-right: auto">
                     <tr>
                         <td>Tên đăng nhập</td>
@@ -38,7 +38,7 @@
                     </tr>
                     <tr>
                         <td>Mật khẩu</td>
-                        <td><input type="password" name="password" value="<%=acc.getPassword()%>"required readonly></td>
+                        <td><input type="password" name="password" value="<%=acc.getPassword()%>"required></td>
                     </tr>
                     <tr>
                         <td>Email</td>
@@ -49,12 +49,12 @@
                         <td>
                             <%
                                 if (acc.getType() == 0) {%>
-                                <input type="email" name="email" value="Admin"required readonly>
+                                <input type="text" name="type" value="Admin"required >
                             <% } else {
                                 if (acc.getType() == 1) {%>
-                                <input type="email" name="email" value="Staff"required readonly>
+                                <input type="text" name="type" value="Staff"required >
                             <% } else { %>
-                            <input type="email" name="email" value="Customer"required readonly>
+                            <input type="text" name="type" value="Customer"required >
                             <%}
                                 }%>
                         </td>
@@ -63,12 +63,6 @@
                         <td></td>
                         <td>
                             <input type="submit" value="Cập nhật">
-                            <script>
-                                function dieu_huong() {
-                                    location.replace("ChangePass.jsp");
-                                }
-                            </script>
-                            <button name="changepass" onclick="dieu_huong()">Đổi mật khẩu</button>
                         </td>
                     </tr>
                 </table>

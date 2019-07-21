@@ -38,8 +38,8 @@ public class AccountDB {
             String sql = "SELECT * FROM dbo.Account";
             PreparedStatement st = con.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
-            while(rs.next()){
-                list.add(new Account(rs.getString(1),rs.getString(2) , rs.getString(3), rs.getString(4), rs.getInt(5)));
+            while (rs.next()) {
+                list.add(new Account(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5)));
             }
         } catch (SQLException ex) {
             Logger.getLogger(AccountDB.class.getName()).log(Level.SEVERE, null, ex);
@@ -52,7 +52,7 @@ public class AccountDB {
             String sql = "SELECT * FROM dbo.Account WHERE Username=? ";
             PreparedStatement st = con.prepareStatement(sql);
             st.setString(1, username);
-            
+
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 return new Account(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5));
@@ -63,8 +63,7 @@ public class AccountDB {
         return null;
 
     }
-    
-    
+
     public Account getAccount(String username, String password) {
         try {
             String sql = "SELECT * FROM dbo.Account WHERE Username=? AND Password =?";
@@ -141,6 +140,23 @@ public class AccountDB {
         try {
             String sql = "UPDATE dbo.Account SET DisplayName = N'" + name + "', Email = '" + email + "' WHERE UserName='" + user + "'";
             PreparedStatement st = con.prepareStatement(sql);
+            int x = st.executeUpdate();
+            return x;
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+    }
+
+    public int edit(String user, String pass, String name, String email, int type) {
+        try {
+            String sql = "UPDATE dbo.Account SET DisplayName = ?, Email = ?, password = ?, type = ? WHERE UserName= ?";
+            PreparedStatement st = con.prepareStatement(sql);
+            st.setString(1, name);
+            st.setString(2, email);
+            st.setString(3, pass);
+            st.setInt(4, type);
+            st.setString(5, user);
             int x = st.executeUpdate();
             return x;
         } catch (SQLException ex) {

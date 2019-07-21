@@ -29,7 +29,7 @@
             <tr>
                 <td><img src="Images/<%=i.getImage()%>" style="width: 128px; height: 128px;s"></td>
                 <td><%=i.getName()%> </td>
-                <td><button><a href="#" style="text-decoration: none; color: black">Sửa</a></button></td>
+                <td><button><a href="EditProduct.jsp?id=<%=i.getID()%>" style="text-decoration: none; color: black">Sửa</a></button></td>
                 <td><button><a href="#" style="text-decoration: none; color: black">Xoá</a></button></td>
             </tr>
             <%}%>
