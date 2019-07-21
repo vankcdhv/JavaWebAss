@@ -25,7 +25,8 @@ public class NewClass {
 
     public static void main(String[] args) {
         ProductDB pdb = new ProductDB();
-        System.out.println(pdb.getProductByID("BTS").getDescribe());
+        AccountDB adb = new AccountDB();
+        System.out.println(adb.addAccount("le", "le", "Lê Thiện Văn", "van@van", 3));
     }
 }
 

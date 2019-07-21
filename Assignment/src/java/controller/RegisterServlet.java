@@ -35,7 +35,7 @@ public class RegisterServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("Unicode");
+        request.setCharacterEncoding("utf-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             String username = request.getParameter("username");
@@ -47,7 +47,7 @@ public class RegisterServlet extends HttpServlet {
             int x = adb.addAccount(username, password, display, email, type);
             if (x == 0) {
                 request.setAttribute("error", "Register not succesfuly!");
-                RequestDispatcher dis = request.getRequestDispatcher("Index.jsp");
+                RequestDispatcher dis = request.getRequestDispatcher("Register.jsp");
                 dis.forward(request, response);
             } else {
                 HttpSession session = request.getSession(true);
