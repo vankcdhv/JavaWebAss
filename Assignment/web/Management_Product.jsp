@@ -4,6 +4,9 @@
     Author     : vank4
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="entity.Product"%>
+<%@page import="java.util.List"%>
 <%@page import="model.ProductDB"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -16,10 +19,12 @@
         <H1 style="text-align: center">Danh sách sản phẩm</H1>
         <%
             ProductDB pdb = new ProductDB();
+            List<Product> list = new ArrayList<>();
+            list = pdb.getAllProduct();
         %>
                 
         <table>
-            
+            <tr></tr>
         </table>
     </body>
 </html>

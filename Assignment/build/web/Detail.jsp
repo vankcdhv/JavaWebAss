@@ -4,8 +4,8 @@
     Author     : vank4
 --%>
 
+<%@page import="model.ProductDB"%>
 <%@page import="entity.Product"%>
-<%@page import="model.DBProduct"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -28,7 +28,7 @@
         <!--end menuContainer-->
         <%
             String id = request.getParameter("id");
-            DBProduct pdb = new DBProduct();
+            ProductDB pdb = new ProductDB();
             Product shoe = pdb.getProductByID(id);
 
         %>

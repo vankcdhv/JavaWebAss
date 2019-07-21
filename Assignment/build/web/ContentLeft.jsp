@@ -4,9 +4,9 @@
     Author     : vank4
 --%>
 
+<%@page import="model.CategoryDB"%>
 <%@page import="entity.Category"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="model.DBCategory"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,7 +19,7 @@
     <body>
         <div id="sanphammoi" class="radius">Category</div>
         <%
-            DBCategory cdb = new DBCategory();
+            CategoryDB cdb = new CategoryDB();
             ArrayList<Category> list = cdb.getAllCategories();
         %>
         <div id="content_left" >

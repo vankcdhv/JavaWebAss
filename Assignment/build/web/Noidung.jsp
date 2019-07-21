@@ -4,10 +4,10 @@
     Author     : vank4
 --%>
 
-<%@page import="model.DBCategory"%>
+<%@page import="model.CategoryDB"%>
+<%@page import="model.ProductDB"%>
 <%@page import="entity.Product"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="model.DBProduct"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,9 +24,9 @@
             if (code == null) {
                 code = "GCG";
             }
-            DBProduct pdb = new DBProduct();
+            ProductDB pdb = new ProductDB();
             ArrayList<Product> list = pdb.getListProductByCatID(code);
-            DBCategory cdb = new DBCategory();
+            CategoryDB cdb = new CategoryDB();
             String name = cdb.getNameByCode(code);
             String[] imgname = new String[list.size()];
             double[] price = new double[list.size()];

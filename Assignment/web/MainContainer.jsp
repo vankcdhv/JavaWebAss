@@ -4,11 +4,10 @@
     Author     : vank4
 --%>
 
+<%@page import="model.ProductDB"%>
 <%@page import="entity.Product"%>
-<%@page import="model.DBProduct"%>
 <%@page import="entity.Category"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="model.DBCategory"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -52,7 +51,7 @@
                 </div>
                 <div id="mainContent_2_content"> 
                     <%
-                        DBProduct pdb = new DBProduct();
+                        ProductDB pdb = new ProductDB();
                         ArrayList<Product> list = pdb.getTopProduct();
                         String[] imgname = new String[list.size()];
                         double[] price = new double[list.size()];

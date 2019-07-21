@@ -4,10 +4,6 @@
     Author     : vank4
 --%>
 
-<%@page import="java.util.ArrayList"%>
-<%@page import="model.DBCategory"%>
-<%@page import="entity.Category"%>
-<%@page import="entity.Account"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
