@@ -4,6 +4,7 @@
     Author     : vank4
 --%>
 
+<%@page import="model.ProductDB"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,7 +15,7 @@
     <body>
         <H1 style="text-align: center">Danh sách sản phẩm</H1>
         <%
-            
+            ProductDB pdb = new ProductDB();
         %>
                 
         <table>
