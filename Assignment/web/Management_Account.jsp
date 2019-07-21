@@ -16,6 +16,13 @@
             function dieu_huong(locat) {
                 location.replace(locat);
             }
+            function showConfirm(){
+                if(confirm("Bạn chắc chắn muốn xoá tài khoản!")){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         </script>
         <title>JSP Page</title>
     </head>
@@ -54,7 +61,7 @@
                         }%>
                 </td>
                 <td><a href="AccountUpdate.jsp?username=<%=i.getUsername()%>">Sửa</a></td>
-                <td><a href="AccountDelleteServlet?username=<%=i.getUsername()%>">Xoá</a></td>
+                <td><a onclick="return showConfirm()" href="AccountDelleteServlet?username=<%=i.getUsername()%>">Xoá</a></td>
             </tr>
             <%}%>
         </table>
