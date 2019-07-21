@@ -162,7 +162,7 @@
 }
 
 #mainContent_3_2 {
-   text-align: right;
+    text-align: right;
 }
 
 #mainContent_3 span {
@@ -210,4 +210,17 @@
 }
 #login a:hover{
     color: red;
+}
+
+#button a:link{
+    color: black;
+    text-decoration: none;
+}
+#button a:hover{
+    color: black;
+    text-decoration: none;
+}
+#button a:visited{
+    color: black;
+    text-decoration: none;
 }

@@ -42,7 +42,7 @@
             <!-- end sidebar1 -->
             <!-- start content -->
             <section style="width: ">
-                <div id="mainContent_1">
+                <div style="height: auto;padding-left: 20px; background-color: #fff;">
                     <%!String page;%>
                     <%
                         page = request.getParameter("page");

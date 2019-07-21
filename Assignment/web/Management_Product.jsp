@@ -14,17 +14,25 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Management Product</title>
+        <link type="text/css" rel="stylesheet" href="CSS/mystyle.css">
     </head>
     <body>
         <H1 style="text-align: center">Danh sách sản phẩm</H1>
-        <%
-            ProductDB pdb = new ProductDB();
-            List<Product> list = new ArrayList<>();
-            list = pdb.getAllProduct();
-        %>
-                
+            <%
+                ProductDB pdb = new ProductDB();
+                List<Product> list = pdb.getAllProduct();
+            %>
         <table>
-            <tr></tr>
+            <%
+                for (Product i : list) {
+            %>
+            <tr>
+                <td><img src="Images/<%=i.getImage()%>" style="width: 128px; height: 128px;s"></td>
+                <td><%=i.getName()%> </td>
+                <td><button><a href="#" style="text-decoration: none; color: black">Sửa</a></button></td>
+                <td><button><a href="#" style="text-decoration: none; color: black">Xoá</a></button></td>
+            </tr>
+            <%}%>
         </table>
     </body>
 </html>

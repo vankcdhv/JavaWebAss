@@ -5,7 +5,6 @@
  */
 package model;
 
-import com.sun.xml.ws.tx.at.v10.types.PrepareResponse;
 import entity.Category;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
