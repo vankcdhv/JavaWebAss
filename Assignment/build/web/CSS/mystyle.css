@@ -1,0 +1,213 @@
+#bodyStyle {
+    background-color: #787878; margin-top: 20px; padding: 0; font-family: Verdana, Geneva, sans-serif; font-size: 12px;
+}
+
+#header {
+    width: 1000px; height: 100px; margin: 0 auto; background-color: #FFFFFF;
+}
+
+#logo {
+    width: 1000px;height: 100px;
+}
+
+#logo h1 {
+    float: left; margin-top: 28px;
+}
+
+#logo div {
+    padding-left: 60px;
+}
+
+#logo span {
+    color: #F00;
+}
+
+#logo p {
+    float: left; margin-top: 40px; font-weight: 900; margin-left: 5px; word-spacing: 2px;
+}
+
+#menuContainer {
+    width: 980px; margin: 0 auto;background-color: #000000;
+    border: 10px solid #00F;
+    -webkit-border-image: url(../Images/border4.gif) 30 round; /* Safari 3.1-5 */
+    -o-border-image: url(../Images/border4.gif) 30 round; /* Opera 11-12.1 */
+    border-image: url(../Images/border4.gif) 30 round;
+    border-image-repeat: repeat-y;
+}
+
+#menu {
+    /*#8C0209*/
+    width: 980px; margin: 0 auto; height: 50px; background-color: #00cccc; line-height: 50px;
+}
+
+#menu ul {
+    list-style: none; padding: 0px; margin: 0px; margin-left: 20px;
+}
+
+#menu li{
+    float: left; margin-left: 3px; padding: 0px 12px; 
+}
+
+#menu a {
+    color: #000; font-weight: 800; text-decoration: none;
+}
+
+#content_left {
+    height: auto;
+}
+
+#content_left ul {
+    list-style: none; padding: 10px 5px;
+}
+
+#mainContainer {
+    width: 990px; margin: 0 auto;background-color: #FFFFFF;border: 0px solid #8C0209;padding: 20px 5px 0px 5px;
+}
+
+#sidebar1 {
+    width: 220px;font-size: 12px;float: left;
+}
+
+#section1 {
+    border: 0px solid #1a24fc;
+}
+
+#section2 {
+    border: 0px solid #1a24fc;
+}
+
+#section3 {
+    border: 0px solid #8C0209;
+}
+
+#sanphammoi {
+    border: 1px solid #8C0209;
+    height: 40px;background-color:#8C0209;color: #FFFFFF;text-align: center;padding: 20px 0px 0px 0px;
+}
+
+#content_left li {
+    border-bottom: #999 1px dashed; padding: 10px 0px;
+}
+
+#content_left a {
+    text-decoration: none;
+}
+
+#hotrotructuyen {
+    height: 40px;background-color:#8C0209;color: #FFFFFF;text-align: center;padding: 20px 0px 0px 0px;
+}
+
+#yahooAndSkype {
+    height: auto; text-align: center; color: #8C0209; border: #8C0209 0px solid;padding: 20px 0px 20px 0px;
+}
+
+#yahooAndSkype span {
+    font-weight: bold;
+}
+
+#section3_topic {
+    height: 40px;background-color:#8C0209;color: #FFFFFF;text-align: center;padding: 20px 0px 0px 0px;
+}
+
+#section3_content {
+    height: 100px;padding: 20px 0px 0px 20px;
+}
+
+#mainContent {
+    float: left;width: 770px;
+}
+
+#mainContent_1 {
+    height: 400px;padding-left: 20px; background-color: #fff;
+}
+
+#mainContent_1 img {
+    height: 100%; width: 100%;
+}
+
+#mainContent_2 {
+    padding-left: 20px;
+}
+
+#mainContent_1_title {
+    font-weight: bold;color: #900;background-color: #FFF; width: 221px; height: 27px; position: relative; top: -405px; left: 529px;
+}
+
+#mainContent_2_title {
+    margin-top: 10px;padding-left:20px; padding-top:15px;background-color:#8C0209;color:#FFFFFF; height:30px;
+}
+
+#mainContent_2_content {
+    margin-top: 4px;
+}
+
+#mainContent_2_content img {
+    height: 160px; width: 103px;
+}
+
+#mainContent_3 {
+    padding-bottom: 0px;line-height: 200%;padding-left: 20px;
+}
+
+#mainContent_3 h1 {
+    color: #F00;
+}
+
+#mainContent_3 h3 {
+    color: #F00; font-size: 14px;
+}
+
+#mainContent_3_1 {
+    margin-left: 20px; text-align: justify; align: right;
+}
+
+#mainContent_3_2 {
+   text-align: right;
+}
+
+#mainContent_3 span {
+    font-weight: bold; font-size: 24px; text-shadow: 2px 2px #FF0000;
+}
+
+#mainContent_3 a {
+    font-weight: bold; color: #930; text-decoration: none; 
+}
+
+#mainContent_4 {
+    padding-left: 20px;
+}
+
+#mainContent_4_title {
+    margin-top: 10px;padding-left:20px; padding-top:15px;background-color:#8C0209;color:#FFFFFF; height:30px;
+}
+
+#footer {
+    width: 960px;height: 70px; margin: 0 auto;padding: 0 20px;background-color: #FFFFFF; border: 0px solid #8C0209;
+}
+
+#footer_content {
+    float: left; width: 400px; margin-top: 15px;
+}
+
+#footer_icon {
+    float: right; width: 300px; text-align: right; margin-top: 10px;
+}
+
+.radius {
+    border-radius:  25px 5px 25px 5px;
+}
+
+#login {
+    margin: 5px 5px 5px 5px;
+    padding: 35px 5px 5px 5px;
+}
+#login a:visited{
+    color: black;
+}
+#login a:link{
+    color: black; 
+    text-decoration: none;
+}
+#login a:hover{
+    color: red;
+}
