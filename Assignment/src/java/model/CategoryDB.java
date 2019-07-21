@@ -19,17 +19,17 @@ import java.util.logging.Logger;
  *
  * @author vank4
  */
-public class DBCategory {
+public class CategoryDB {
 
     DBContext db;
     Connection con;
 
-    public DBCategory() {
+    public CategoryDB() {
         try {
             db = new DBContext();
             con = db.getConnection();
         } catch (Exception ex) {
-            Logger.getLogger(DBCategory.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CategoryDB.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -44,7 +44,7 @@ public class DBCategory {
                 list.add(temp);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DBCategory.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CategoryDB.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }
@@ -59,7 +59,7 @@ public class DBCategory {
                 return rs.getString(1);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DBCategory.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CategoryDB.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }

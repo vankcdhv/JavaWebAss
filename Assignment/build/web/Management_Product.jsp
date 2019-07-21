@@ -12,6 +12,13 @@
         <title>Management Product</title>
     </head>
     <body>
-        <H1>List Product</H1>
+        <H1 style="text-align: center">Danh sách sản phẩm</H1>
+        <%
+            
+        %>
+                
+        <table>
+            
+        </table>
     </body>
 </html>

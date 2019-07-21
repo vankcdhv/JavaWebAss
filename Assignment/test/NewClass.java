@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import model.AccountDB;
-import model.DBCategory;
+import model.CategoryDB;
 import model.DBContext;
-import model.DBProduct;
+import model.ProductDB;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -22,7 +22,7 @@ import model.DBProduct;
 public class NewClass {
 
     public static void main(String[] args) {
-        DBProduct pdb = new DBProduct();
+        ProductDB pdb = new ProductDB();
         ArrayList<Product> list = pdb.getTopProduct();
         String[] imgname = new String[list.size()];
         double[] price = new double[list.size()];

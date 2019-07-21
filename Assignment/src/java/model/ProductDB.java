@@ -18,17 +18,17 @@ import java.util.logging.Logger;
  *
  * @author vank4
  */
-public class DBProduct {
+public class ProductDB {
 
     DBContext db;
     Connection con;
 
-    public DBProduct() {
+    public ProductDB() {
         try {
             db = new DBContext();
             con = db.getConnection();
         } catch (Exception ex) {
-            Logger.getLogger(DBProduct.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProductDB.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -46,7 +46,7 @@ public class DBProduct {
                 list.add(p);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DBProduct.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProductDB.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }
@@ -62,7 +62,7 @@ public class DBProduct {
                         rs.getDouble(5), rs.getInt(6), rs.getString(7), rs.getString(8), rs.getString(9)));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DBProduct.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProductDB.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }
@@ -78,7 +78,7 @@ public class DBProduct {
                         rs.getDouble(5), rs.getInt(6), rs.getString(7), rs.getString(8), rs.getString(9)));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DBProduct.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProductDB.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }
@@ -95,7 +95,7 @@ public class DBProduct {
                         rs.getDouble(5), rs.getInt(6), rs.getString(7), rs.getString(8), rs.getString(9));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DBProduct.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProductDB.class.getName()).log(Level.SEVERE, null, ex);
         }
         return res;
     }
