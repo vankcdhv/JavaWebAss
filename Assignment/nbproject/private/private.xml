@@ -8,6 +8,19 @@
             <file>file:/D:/Downloads/Documents/GitHub/JavaWebAss/Assignment/web/Management_Product.jsp</file>
             <file>file:/D:/Downloads/Documents/GitHub/JavaWebAss/Assignment/src/java/model/ProductDB.java</file>
         </group>
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/C:/Users/Admin/Documents/GitHub/JavaWebAss/Assignment/src/java/controller/AddAccountServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/JavaWebAss/Assignment/src/java/controller/AccountDelleteServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/JavaWebAss/Assignment/src/java/model/AccountDB.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/JavaWebAss/Assignment/web/AddAccount.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/JavaWebAss/Assignment/src/java/controller/AccountUpdateServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/JavaWebAss/Assignment/src/java/controller/RegisterServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/JavaWebAss/Assignment/web/Management_Account.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/JavaWebAss/Assignment/web/Register.jsp</file>
+        </group>
+>>>>>>> parent of 759d128... Revert "Dung"
     </open-files>
 </project-private>
