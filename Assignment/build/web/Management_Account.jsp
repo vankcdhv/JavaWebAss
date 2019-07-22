@@ -65,7 +65,6 @@
             </tr>
             <%}%>
         </table>
-        <a href="AddAccount.jsp">Add account</a>
     </body>
 </html>
 

@@ -32,10 +32,6 @@
         <servlet-name>AccountDelleteServlet</servlet-name>
         <servlet-class>controller.AccountDelleteServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>AddAccountServlet</servlet-name>
-        <servlet-class>controller.AddAccountServlet</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/RegisterServlet</url-pattern>
@@ -67,10 +63,6 @@
     <servlet-mapping>
         <servlet-name>AccountDelleteServlet</servlet-name>
         <url-pattern>/AccountDelleteServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AddAccountServlet</servlet-name>
-        <url-pattern>/AddAccountServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
