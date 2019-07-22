@@ -4,9 +4,6 @@
     Author     : vank4
 --%>
 
-<%@page import="java.util.List"%>
-<%@page import="entity.Category"%>
-<%@page import="model.CategoryDB"%>
 <%@page import="entity.Product"%>
 <%@page import="model.ProductDB"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -35,7 +32,7 @@
             <jsp:include page="MenuContainer.jsp"/>
         </section>
         <!--end menuContainer-->
-        <form name="frm_edit_product" action="UpdateProduct" method="post" enctype="ultipart/form-data">
+        <form name="frm_edit_product" action="UpdateProductServlet" method="post" enctype="ultipart/form-data">
             <section id="mainContainer">
                 <!-- Start sidebar1 -->
                 <aside style="width: 300px;float: left;">
@@ -54,30 +51,8 @@
                         <h2>THÔNG TIN SẢN PHẨM</h2>
                         <table style="width: 600px;margin-left: auto;margin-right: auto;">
                             <tr>
-                                <td>ID</td>
-                                <td><input type="text" name="id" value="<%=shoe.getID()%>" readonly></td>
-                            </tr>
-                            <tr>
                                 <td>Tên sản phẩm:</td>
                                 <td><input type="text" name="name" value="<%=shoe.getName()%>"></td>
-                            </tr>
-                            <tr>
-                                <td>Category</td>
-                                <td>
-                                    <select name="catID">
-                                        <%
-                                            CategoryDB cdb = new CategoryDB();
-                                            List<Category> list = cdb.getAllCategories();
-                                            for (Category i : list) {
-                                                String op = "<option value=\"" + i.getID() + "\" " + ((i.getID().equals(shoe.getCat_ID())) ? "selected" : "") + ">" + i.getName() + "</option>";
-                                        %>
-                                        <%=op%>
-                                        <%}%>
-                                        <option value="">test</option>
-
-                                    </select>
-                                </td>
-                            </tr>
                             <tr>
                                 <td>Giá:</td>
                                 <td><input type="text" name="price" value="<%=shoe.getPrice()%>"></td>
@@ -95,8 +70,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td><input type="submit" value="Sửa"></td>
+                                <td>
+                                </td>
                             </tr>
                         </table>
                     </div>
