@@ -70,8 +70,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                </td>
+                                <td></td>
+                                <td><input type="submit" value="Chỉnh sửa"></td>
                             </tr>
                         </table>
                     </div>
