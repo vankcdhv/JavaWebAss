@@ -4,6 +4,10 @@
     Author     : vank4
 --%>
 
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.List"%>
+<%@page import="entity.Category"%>
+<%@page import="model.CategoryDB"%>
 <%@page import="entity.Product"%>
 <%@page import="model.ProductDB"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -42,7 +46,7 @@
                         <img src="Images/<%=shoe.getImage()%>" style="width: 300px;height: 300px;">
                         <br>
                         <input type="file" name="image" accept="image/*">
-                    </div>
+                    </div>  
                 </aside>
                 <!-- end sidebar1 -->
                 <!-- start content -->
@@ -51,15 +55,44 @@
                         <h2>THÔNG TIN SẢN PHẨM</h2>
                         <table style="width: 600px;margin-left: auto;margin-right: auto;">
                             <tr>
+                                <td>ID</td>
+                                <td><input type="text" name="id" value="<%=shoe.getID()%>"></td>
+                            </tr>
+                            <tr>
                                 <td>Tên sản phẩm:</td>
                                 <td><input type="text" name="name" value="<%=shoe.getName()%>"></td>
+                            </tr>
+                            <tr>
+                                <td>Category</td>
+                                <td>
+                                    <select name="catID">
+                                        <%
+                                            CategoryDB cdb = new CategoryDB();
+                                            List<Category> list = cdb.getAllCategories();
+                                            String op = "";
+                                            for (Category i : list) {
+                                                op = "<option value=\"" + i.getID() + "\""+(i.getID().equals(shoe.getCat_ID())?"selected":"")+">" + i.getName() + "</option>";
+                                        %>
+                                        <%=op%>
+                                        <%}%>
+                                    </select>
+                                </td>
+                            </tr>
                             <tr>
                                 <td>Giá:</td>
                                 <td><input type="text" name="price" value="<%=shoe.getPrice()%>"></td>
                             </tr>
                             <tr>
                                 <td>Còn:</td>
-                                <td><input type="text" name="name" value="<%=shoe.getQuantity()%>" style="width: 50px"> sản phẩm</td>
+                                <td><input type="text" name="quantity" value="<%=shoe.getQuantity()%>" style="width: 50px"> sản phẩm</td>
+                            </tr>
+                            <tr>
+                                <td>Trạng thái</td>
+                                <td><input type="text" name="status" value="<%=shoe.getStatus()%>" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>Ngày thêm sản phẩm</td>
+                                <td><input type="text" name="date" value="<%=shoe.getAddDate() %>" readonly></td>
                             </tr>
                             <tr>
                                 <td>Thông tin thêm:</td>

@@ -9,10 +9,12 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.ProductDB;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -88,12 +90,12 @@ public class UpdateProductServlet extends HttpServlet {
         factory.setSizeThreshold(MEMORY_THRESHOLD);
         // sets temporary location to store files
         factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
- 
+
         ServletFileUpload upload = new ServletFileUpload(factory);
- 
+
         // sets maximum size of upload file
         upload.setFileSizeMax(MAX_FILE_SIZE);
- 
+
         // sets maximum size of request (include file + form data)
         upload.setSizeMax(MAX_REQUEST_SIZE);
         // constructs the directory path to store upload file
@@ -105,18 +107,19 @@ public class UpdateProductServlet extends HttpServlet {
         if (!uploadDir.exists()) {
             uploadDir.mkdir();
         }
-        
+        String image = "";
         try {
             // parses the request's content to extract file data
             @SuppressWarnings("unchecked")
             List<FileItem> formItems = upload.parseRequest(request);
- 
+
             if (formItems != null && formItems.size() > 0) {
                 // iterates over form's fields
                 for (FileItem item : formItems) {
                     // processes only fields that are not form fields
                     if (!item.isFormField()) {
                         String fileName = new File(item.getName()).getName();
+                        image = fileName;
                         String filePath = uploadPath + File.separator + fileName;
                         File storeFile = new File(filePath);
                         // saves the file on disk
@@ -129,6 +132,21 @@ public class UpdateProductServlet extends HttpServlet {
         } catch (Exception ex) {
             request.setAttribute("message",
                     "There was an error: " + ex.getMessage());
+        }
+        String ID = request.getParameter("id");
+        String name = request.getParameter("name");
+        String catID = request.getParameter("catID");
+        double price = Double.parseDouble(request.getParameter("price"));
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        String status = request.getParameter("status");
+        String des = request.getParameter("des");
+        ProductDB pdb = new ProductDB();
+        int x= pdb.update(ID, name, catID, image, price, quantity, status, des);
+        if (x==0){
+            RequestDispatcher dis = request.getRequestDispatcher("EditProduct.jsp?id="+ID);
+            dis.forward(request, response);
+        } else {
+            response.sendRedirect("EditProduct.jsp?id="+ID);
         }
     }
 
