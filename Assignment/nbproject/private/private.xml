@@ -2,12 +2,19 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group name="PRJ321">
             <file>file:/C:/Users/Dell/Documents/GitHub/JavaWebAss/Assignment/src/java/model/CategoryDB.java</file>
             <file>file:/C:/Users/Dell/Documents/GitHub/JavaWebAss/Assignment/src/java/controller/UpdateProductServlet.java</file>
             <file>file:/C:/Users/Dell/Documents/GitHub/JavaWebAss/Assignment/web/Header.jsp</file>
             <file>file:/C:/Users/Dell/Documents/GitHub/JavaWebAss/Assignment/web/CSS/mystyle.css</file>
             <file>file:/C:/Users/Dell/Documents/GitHub/JavaWebAss/Assignment/web/Detail.jsp</file>
+=======
+        <group>
+            <file>file:/C:/Users/Admin/Documents/GitHub/JavaWebAss/Assignment/src/java/controller/UpdateProductServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/JavaWebAss/Assignment/src/java/model/ProductDB.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/JavaWebAss/Assignment/web/EditProduct.jsp</file>
+>>>>>>> c0b7709545dc4f7194734266341b6becb0070e2b
         </group>
     </open-files>
 </project-private>

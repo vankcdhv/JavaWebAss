@@ -4,6 +4,7 @@
     Author     : vank4
 --%>
 
+<%@page import="java.io.File"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.List"%>
 <%@page import="entity.Category"%>
@@ -36,27 +37,37 @@
             <jsp:include page="MenuContainer.jsp"/>
         </section>
         <!--end menuContainer-->
-        <form name="frm_edit_product" action="UpdateProductServlet" method="post" enctype="ultipart/form-data">
-            <section id="mainContainer">
-                <!-- Start sidebar1 -->
+
+
+        <section id="mainContainer">
+            <!-- Start sidebar1 -->
+            <form name="frm_up" action="UpdateProductServlet" method="post" enctype="multipart/form-data">
+                <%
+                    String src = "Images/" + shoe.getImage();
+                    src = src.replace('\\', '/');
+
+                %>
                 <aside style="width: 300px;float: left;">
                     <h2 style="color: brown;text-align: center;"><%=shoe.getName()%></h2>
                     <div id="section1"> 
                         <!--Mục 1-->
-                        <img src="Images/<%=shoe.getImage()%>" style="width: 300px;height: 300px;">
+                        <img src="<%=src%>" style="width: 300px;height: 300px;">
+
                         <br>
-                        <input type="file" name="image" accept="image/*">
+                        <input type="file" name="image" accept="image/*" onchange ="document.frm_up.submit()">
                     </div>  
                 </aside>
-                <!-- end sidebar1 -->
-                <!-- start content -->
+            </form>
+            <!-- end sidebar1 -->
+            <!-- start content -->
+            <form action="UpdateProductServlet" method="post">
                 <section style="float: left;width: 600px;">
                     <div style="width: 600px;height: 400px;padding-left: 50px; background-color: #fff;">
                         <h2>THÔNG TIN SẢN PHẨM</h2>
                         <table style="width: 600px;margin-left: auto;margin-right: auto;">
                             <tr>
                                 <td>ID</td>
-                                <td><input type="text" name="id" value="<%=shoe.getID()%>"></td>
+                                <td><input type="text" name="id" value="<%=shoe.getID()%>" readonly></td>
                             </tr>
                             <tr>
                                 <td>Tên sản phẩm:</td>
@@ -71,7 +82,7 @@
                                             List<Category> list = cdb.getAllCategories();
                                             String op = "";
                                             for (Category i : list) {
-                                                op = "<option value=\"" + i.getID() + "\""+(i.getID().equals(shoe.getCat_ID())?"selected":"")+">" + i.getName() + "</option>";
+                                                op = "<option value=\"" + i.getID() + "\"" + (i.getID().equals(shoe.getCat_ID()) ? "selected" : "") + ">" + i.getName() + "</option>";
                                         %>
                                         <%=op%>
                                         <%}%>
@@ -92,7 +103,7 @@
                             </tr>
                             <tr>
                                 <td>Ngày thêm sản phẩm</td>
-                                <td><input type="text" name="date" value="<%=shoe.getAddDate() %>" readonly></td>
+                                <td><input type="text" name="date" value="<%=shoe.getAddDate()%>" readonly></td>
                             </tr>
                             <tr>
                                 <td>Thông tin thêm:</td>
@@ -109,9 +120,10 @@
                         </table>
                     </div>
                 </section>
-                <!-- end content -->
-            </section>
-        </form>
+            </form>
+
+            <!-- end content -->
+        </section>
         <!--footer-->
         <div id="footer">
             <jsp:include page="Footer.jsp"/>
