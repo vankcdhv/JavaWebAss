@@ -79,9 +79,7 @@
                 </div>
             </section>
             <!-- end content -->
-
             <div>
-
                 <div class="col-lg-9 offset-lg-2 col-12 comment-main rounded">
                     <form ation="" method="post">
                         <div class="form-gtoup">
@@ -122,51 +120,35 @@
                         <button name="submit" type="submit" class="btn btn-primary btn-block"><b>Submit Comment</b></button>
                         <br>
                     </form>
-
-
-
-
                 </div>
             </div>
-                <hr>
-
-
-
-
-
-
-
-
-
-                <div class="row">
-                    <div class="col-lg-9 offset-lg-2 col-12 comment-main rounded">
-                        <ul class="p-0">
-                            <li class="wow fadeInUp">
-                                <div class="row comment-box p-2 pt-4 pr-5">
-                                    <div class="col-lg-2 col-3 user-img text-center">
-                                        <img src="image/<?php echo $avater; ?>" class="main-cmt-img">
-                                    </div>
-                                    <div class="col-lg-10 col-9 user-comment bg-light rounded pb-1">
-                                        <div class="row">
-                                            <div class="col-lg-8 col-6 border-bottom pr-0">
-                                                <p class="w-100 p-2 m-0"><font color="<?php echo $color; ?>"><b><?php echo $body; ?></b></font></p>
-                                            </div>
-                                            <div class="col-lg-4 col-6 border-bottom">
-                                                <p class="w-100 p-2 m-0"><span class="float-right"><i class="fa fa-clock-o mr-1" aria-hidden="true"></i><?php echo $date; ?></span></p>
-                                            </div>
-                                        </div> 
-                                        <div class="user-comment-desc p-1 pl-2">
-                                            <p class="m-0 mr-2"><?php echo $name; ?></p>                      
-
-                                        </div>    
-                                    </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-9 offset-lg-2 col-12 comment-main rounded">
+                    <ul class="p-0">
+                        <li class="wow fadeInUp">
+                            <div class="row comment-box p-2 pt-4 pr-5">
+                                <div class="col-lg-2 col-3 user-img text-center">
+                                    <img src="image/<?php echo $avater; ?>" class="main-cmt-img">
                                 </div>
-
-
-                            </li>
-                        </ul>
-                    </div>
+                                <div class="col-lg-10 col-9 user-comment bg-light rounded pb-1">
+                                    <div class="row">
+                                        <div class="col-lg-8 col-6 border-bottom pr-0">
+                                            <p class="w-100 p-2 m-0"><font color="<?php echo $color; ?>"><b><?php echo $body; ?></b></font></p>
+                                        </div>
+                                        <div class="col-lg-4 col-6 border-bottom">
+                                            <p class="w-100 p-2 m-0"><span class="float-right"><i class="fa fa-clock-o mr-1" aria-hidden="true"></i><?php echo $date; ?></span></p>
+                                        </div>
+                                    </div> 
+                                    <div class="user-comment-desc p-1 pl-2">
+                                        <p class="m-0 mr-2"><?php echo $name; ?></p>                      
+                                    </div>    
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
+            </div>
         </section>
         <!--footer-->
         <div id="footer">
