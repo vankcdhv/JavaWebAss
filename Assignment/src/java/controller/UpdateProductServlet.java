@@ -77,12 +77,25 @@ public class UpdateProductServlet extends HttpServlet {
         processRequest(request, response);
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
+
         if (!ServletFileUpload.isMultipartContent(request)) {
             // if not, we stop here
-            PrintWriter writer = response.getWriter();
-            writer.println("Error: Form must has enctype=multipart/form-data.");
-            writer.flush();
-            return;
+            String ID = request.getParameter("id").trim();
+            String name = request.getParameter("name").trim();
+            String catID = request.getParameter("catID").trim();
+            double price = Double.parseDouble(request.getParameter("price").trim());
+            int quantity = Integer.parseInt(request.getParameter("quantity").trim());
+            String status = request.getParameter("status");
+            String des = request.getParameter("des").trim();
+            ProductDB pdb = new ProductDB();
+            int x = pdb.update(ID, name, catID, price, quantity, status, des);
+            if (x == 0) {
+                request.setAttribute("error", "Update failed!");
+                RequestDispatcher dis = request.getRequestDispatcher("EditProduct.jsp?id=" + ID);
+                dis.forward(request, response);
+            } else {
+                response.sendRedirect("EditProduct.jsp?id=" + ID);
+            }
         }
         // configures upload settings
         DiskFileItemFactory factory = new DiskFileItemFactory();
@@ -102,7 +115,9 @@ public class UpdateProductServlet extends HttpServlet {
         // this path is relative to application's directory
         String uploadPath = getServletContext().getRealPath("")
                 + File.separator + UPLOAD_DIRECTORY;
-        // creates the directory if it does not exist
+//        String uploadPath = new File("").getAbsolutePath();
+
+//        creates the directory if it does not exist
         File uploadDir = new File(uploadPath);
         if (!uploadDir.exists()) {
             uploadDir.mkdir();
@@ -124,30 +139,14 @@ public class UpdateProductServlet extends HttpServlet {
                         File storeFile = new File(filePath);
                         // saves the file on disk
                         item.write(storeFile);
-                        request.setAttribute("message",
-                                "Upload has been done successfully >>" + UPLOAD_DIRECTORY + "/" + fileName);
+                        response.getWriter().println(filePath);
                     }
                 }
             }
         } catch (Exception ex) {
-            request.setAttribute("message",
-                    "There was an error: " + ex.getMessage());
+            response.getWriter().println("error " + uploadPath);
         }
-        String ID = request.getParameter("id");
-        String name = request.getParameter("name");
-        String catID = request.getParameter("catID");
-        double price = Double.parseDouble(request.getParameter("price"));
-        int quantity = Integer.parseInt(request.getParameter("quantity"));
-        String status = request.getParameter("status");
-        String des = request.getParameter("des");
-        ProductDB pdb = new ProductDB();
-        int x= pdb.update(ID, name, catID, image, price, quantity, status, des);
-        if (x==0){
-            RequestDispatcher dis = request.getRequestDispatcher("EditProduct.jsp?id="+ID);
-            dis.forward(request, response);
-        } else {
-            response.sendRedirect("EditProduct.jsp?id="+ID);
-        }
+
     }
 
     /**

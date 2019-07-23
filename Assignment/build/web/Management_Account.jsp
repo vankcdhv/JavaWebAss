@@ -16,8 +16,8 @@
             function dieu_huong(locat) {
                 location.replace(locat);
             }
-            function showConfirm(){
-                if(confirm("Bạn chắc chắn muốn xoá tài khoản!")){
+            function showConfirm() {
+                if (confirm("Bạn chắc chắn muốn xoá tài khoản!")) {
                     return true;
                 } else {
                     return false;
@@ -63,9 +63,13 @@
                 <td><a href="AccountUpdate.jsp?username=<%=i.getUsername()%>">Sửa</a></td>
                 <td><a onclick="return showConfirm()" href="AccountDelleteServlet?username=<%=i.getUsername()%>">Xoá</a></td>
             </tr>
+
             <%}%>
+            <tr>
+                <td><a href="AddAccount.jsp">Add account</a></td>
+            </tr>
         </table>
-        <a href="AddAccount.jsp">Add account</a>
+
     </body>
 </html>
 

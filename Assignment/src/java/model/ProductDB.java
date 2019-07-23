@@ -101,13 +101,12 @@ public class ProductDB {
         return res;
     }
 
-    public int update(String ID, String name, String catID, String image, double price, int quantity, String status, String des){
+    public int update(String ID, String name, String catID, double price, int quantity, String status, String des){
         int x=0;
         try {
             String sql = "Update Products SET "
                     + "name = N'"+name+"', "
                     + "cat_ID = '"+catID+"', "
-                    + "image = '"+image+"', "
                     + "price = "+price+", "
                     + "quantity = "+quantity+", "
                     + "describe = N'"+des+"', "
