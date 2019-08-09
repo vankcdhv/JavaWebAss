@@ -4,6 +4,8 @@
     Author     : vank4
 --%>
 
+<%@page import="java.io.File"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.List"%>
 <%@page import="entity.Category"%>
 <%@page import="model.CategoryDB"%>
@@ -35,20 +37,30 @@
             <jsp:include page="MenuContainer.jsp"/>
         </section>
         <!--end menuContainer-->
-        <form name="frm_edit_product" action="UpdateProduct" method="post" enctype="ultipart/form-data">
-            <section id="mainContainer">
-                <!-- Start sidebar1 -->
+
+
+        <section id="mainContainer">
+            <!-- Start sidebar1 -->
+            <form name="frm_up" action="UpdateProductServlet" method="post" enctype="multipart/form-data">
+                <%
+                    String src = "Images/" + shoe.getImage();
+                    src = src.replace('\\', '/');
+
+                %>
                 <aside style="width: 300px;float: left;">
                     <h2 style="color: brown;text-align: center;"><%=shoe.getName()%></h2>
                     <div id="section1"> 
                         <!--Mục 1-->
-                        <img src="Images/<%=shoe.getImage()%>" style="width: 300px;height: 300px;">
+                        <img src="<%=src%>" style="width: 300px;height: 300px;">
+
                         <br>
-                        <input type="file" name="image" accept="image/*">
-                    </div>
+                        <input type="file" name="image" accept="image/*" onchange ="document.frm_up.submit()">
+                    </div>  
                 </aside>
-                <!-- end sidebar1 -->
-                <!-- start content -->
+            </form>
+            <!-- end sidebar1 -->
+            <!-- start content -->
+            <form action="UpdateProductServlet" method="post">
                 <section style="float: left;width: 600px;">
                     <div style="width: 600px;height: 400px;padding-left: 50px; background-color: #fff;">
                         <h2>THÔNG TIN SẢN PHẨM</h2>
@@ -68,13 +80,12 @@
                                         <%
                                             CategoryDB cdb = new CategoryDB();
                                             List<Category> list = cdb.getAllCategories();
+                                            String op = "";
                                             for (Category i : list) {
-                                                String op = "<option value=\"" + i.getID() + "\" " + ((i.getID().equals(shoe.getCat_ID())) ? "selected" : "") + ">" + i.getName() + "</option>";
+                                                op = "<option value=\"" + i.getID() + "\"" + (i.getID().equals(shoe.getCat_ID()) ? "selected" : "") + ">" + i.getName() + "</option>";
                                         %>
                                         <%=op%>
                                         <%}%>
-                                        <option value="">test</option>
-
                                     </select>
                                 </td>
                             </tr>
@@ -84,7 +95,15 @@
                             </tr>
                             <tr>
                                 <td>Còn:</td>
-                                <td><input type="text" name="name" value="<%=shoe.getQuantity()%>" style="width: 50px"> sản phẩm</td>
+                                <td><input type="text" name="quantity" value="<%=shoe.getQuantity()%>" style="width: 50px"> sản phẩm</td>
+                            </tr>
+                            <tr>
+                                <td>Trạng thái</td>
+                                <td><input type="text" name="status" value="<%=shoe.getStatus()%>" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>Ngày thêm sản phẩm</td>
+                                <td><input type="text" name="date" value="<%=shoe.getAddDate()%>" readonly></td>
                             </tr>
                             <tr>
                                 <td>Thông tin thêm:</td>
@@ -96,14 +115,15 @@
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><input type="submit" value="Sửa"></td>
+                                <td><input type="submit" value="Chỉnh sửa"></td>
                             </tr>
                         </table>
                     </div>
                 </section>
-                <!-- end content -->
-            </section>
-        </form>
+            </form>
+
+            <!-- end content -->
+        </section>
         <!--footer-->
         <div id="footer">
             <jsp:include page="Footer.jsp"/>

@@ -33,6 +33,10 @@
         <servlet-class>controller.AccountDelleteServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>AddAccountServlet</servlet-name>
+        <servlet-class>controller.AddAccountServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>UpdateProductServlet</servlet-name>
         <servlet-class>controller.UpdateProductServlet</servlet-class>
     </servlet>
@@ -69,8 +73,12 @@
         <url-pattern>/AccountDelleteServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>AddAccountServlet</servlet-name>
+        <url-pattern>/AddAccountServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>UpdateProductServlet</servlet-name>
-        <url-pattern>/UpdateProduct</url-pattern>
+        <url-pattern>/UpdateProductServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
