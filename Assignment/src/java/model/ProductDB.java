@@ -100,9 +100,5 @@ public class ProductDB {
         }
         return res;
     }
-    
-    public void update(String ID){
-        
-    }
 
 }
