@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group name="Java_Web">
             <file>file:/D:/Downloads/Documents/GitHub/JavaWebAss/Assignment/web/EditProduct.jsp</file>
             <file>file:/D:/Downloads/Documents/GitHub/JavaWebAss/Assignment/web/Management_Product.jsp</file>
             <file>file:/D:/Downloads/Documents/GitHub/JavaWebAss/Assignment/src/java/model/ProductDB.java</file>
             <file>file:/D:/Downloads/Documents/GitHub/JavaWebAss/Assignment/src/java/controller/UpdateProductServlet.java</file>
-=======
-        <group>
-            <file>file:/C:/Users/Admin/Documents/GitHub/JavaWebAss/Assignment/src/java/controller/UpdateProductServlet.java</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/JavaWebAss/Assignment/src/java/model/ProductDB.java</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/JavaWebAss/Assignment/web/Management_Account.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/JavaWebAss/Assignment/web/EditProduct.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/JavaWebAss/Assignment/web/Management_Product.jsp</file>
->>>>>>> 2cba8d0c6781cb5b33776a9b357606ba237f01c3
         </group>
         <group/>
     </open-files>
